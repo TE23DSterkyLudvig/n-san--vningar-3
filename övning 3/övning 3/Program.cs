@@ -44,16 +44,34 @@ static double triangleArea(double Height, double Lenght)
 double a = triangleArea(heightNum, lenghtNum);
 Console.WriteLine(a);
 
-System.Console.WriteLine("Skriv 1 tal");
-string talet = Console.ReadLine();
-int.TryParse(talet, out int taletNum);
+//System.Console.WriteLine("Skriv 1 tal");
+//string talet = Console.ReadLine();
+//int.TryParse(talet, out int taletNum);
+  
+    string talet;
+    int taletNum;
 
- static int getNumberinput(){
   while(true){
-    
+    System.Console.WriteLine("Skriv in ett tal");
+     talet = Console.ReadLine();
+    if(int.TryParse(talet, out  taletNum)){
+         int.TryParse(talet, out  taletNum);
+        break;
+    }
+    else{
+        System.Console.WriteLine("Skriv in igen");
+        Thread.Sleep(800);
+    }
+  }
+
+  static int getNumberinput(int TaletNum, string Talet){
+  while(true){
+    if ( int.TryParse(Talet, out TaletNum)){
+        return TaletNum;
+    }
   }
 }
-int e = getNumberinput(taletNum);
+int e = getNumberinput(taletNum, talet);
 System.Console.WriteLine(e);
 Console.ReadLine();
 
